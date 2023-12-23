@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\JiliUsers;
 use Illuminate\Database\Seeder;
+use App\Models\JiliBoardHistory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+        // user add 
         $jiliusersdata = [
 
             [
@@ -107,8 +110,11 @@ class DatabaseSeeder extends Seeder
                 "amount"=>"1000000",
             ]
         ];
-
         JiliUsers::insert($jiliusersdata);
 
+        // add new board 
+        $jili_history = new JiliBoardHistory;
+        $jili_history->st=1;
+        $jili_history->save();
     }
 }
