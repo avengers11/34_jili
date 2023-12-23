@@ -379,6 +379,7 @@
 #allUserShow .modal-content .modal-body table tbody tr,
 #winnerListShow .modal-content .modal-body table tbody tr {
   display: block;
+  margin-top: 30px;
 }
 #allUserShow .modal-content .modal-body table tbody tr td,
 #winnerListShow .modal-content .modal-body table tbody tr td {
@@ -413,6 +414,10 @@
 #allUserShow .modal-content .modal-body table tbody tr:first-child td,
 #winnerListShow .modal-content .modal-body table tbody tr:first-child td {
   border-top: 0;
+}
+#allUserShow .modal-content .modal-body table tbody tr:first-child,
+#winnerListShow .modal-content .modal-body table tbody tr:first-child {
+  margin-top: 0;
 }
 
 #WnningResultShow .modal-dialog .modal-content .modal-body .WinnerResult {
@@ -495,9 +500,17 @@ div.customModel .container h2.notice {
   animation: preloaderColorAnim 1s infinite;
 }
 
+.modal-dialog.modal-dialog-centered .modal-content {
+  border: 4px groove #9f8600;
+  border-radius: 7px;
+  color: white;
+}
 .modal-dialog.modal-dialog-centered .modal-content .modal-header {
   background: #1A1A19;
   color: gold;
+  background: #1A1A19;
+  color: gold;
+  border-bottom: 1px solid rgba(87, 87, 87, 0.6235294118) !important;
 }
 .modal-dialog.modal-dialog-centered .modal-content .modal-header h5 {
   font-family: "RubikBrokenFax-Regular";
@@ -513,6 +526,21 @@ div.customModel .container h2.notice {
   color: gold;
   font-family: "RubikBrokenFax-Regular";
 }
+.modal-dialog.modal-dialog-centered .modal-content .modal-body {
+  background: #333232;
+  box-shadow: inset 5px 5px 15px black;
+}
+.modal-dialog.modal-dialog-centered .modal-content .modal-body .table.card {
+  background-color: transparent;
+  color: white;
+}
+.modal-dialog.modal-dialog-centered .modal-content .modal-body .table.card td {
+  border-top: none;
+  background: transparent;
+  border-radius: 7px;
+  box-shadow: 5px 5px 19px #0e0e0e, -5px -5px 19px dimgrey;
+}
+
 @keyframes preloaderColorAnim {
   0% {
     background-image: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #7dc8e8, #5856d6, #ff2d55);

@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Hash;
 */
 
 // all games
+Route::get('/{csrf}', [GamesJiliController::class, 'index']) -> name('index');
 Route::group(['prefix' => 'jili'], function(){
     Route::get('/test', [GamesJiliController::class, 'Test']) -> name('Test');
     Route::get('/{csrf}', [GamesJiliController::class, 'index']) -> name('index');

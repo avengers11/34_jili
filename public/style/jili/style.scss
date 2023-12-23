@@ -478,6 +478,7 @@
                 tbody {
                     tr {
                         display: block;
+                        margin-top: 30px;
 
                         td {
                             display: flex;
@@ -516,6 +517,10 @@
 
                     tr:first-child td {
                         border-top: 0;
+                    }
+
+                    tr:first-child {
+                        margin-top: 0;
                     }
                 }
             }
@@ -630,9 +635,16 @@ $background-color_1: #242833;
 // model
 .modal-dialog.modal-dialog-centered {
     .modal-content {
+        border: 4px groove #9f8600;
+        border-radius: 7px;
+        color: white;
+
         .modal-header {
             background: #1A1A19;
             color: gold;
+            background: #1A1A19;
+            color: gold;
+            border-bottom: 1px solid #5757579f !important;
 
             button.close {}
 
@@ -654,7 +666,22 @@ $background-color_1: #242833;
             }
         }
 
-        .modal-body {}
+        .modal-body {
+            background: #333232;
+            box-shadow: inset 5px 5px 15px black;
+
+            .table.card {
+                background-color: transparent;
+                color: white;
+
+                td {
+                    border-top: none;
+                    background: transparent;
+                    border-radius: 7px;
+                    box-shadow: 5px 5px 19px #0e0e0e, -5px -5px 19px dimgrey;
+                }
+            }
+        }
     }
 
 }
