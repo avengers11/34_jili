@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('style\jili\style.css') }}">
 
-    <script src="{{ asset('build\assets\app-d9c3f076.js') }}"></script>
+    <script src="{{ asset('build\assets\app-94c2fcf7.js') }}"></script>
 
     {{-- @vite(['resources\js\JiliGames.js']) --}}
 
