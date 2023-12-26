@@ -437,7 +437,7 @@
         "StartGame" : "{{ route('StartGame') }}",
         "AmountShow" : "{{ route('AmountShow') }}",
         "BetHistory" : "{{ route('BetHistory') }}",
-        "socket" : "http://127.0.0.1:3000/sent_message",
+        "socket" : "https://run2.masudrana.top/sent_message",
     };
     const mydata = {
         "id": $("#id").val(),
