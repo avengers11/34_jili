@@ -2,11 +2,23 @@
   font-family: "RubikBrokenFax-Regular";
   src: url("../../font/RubikBrokenFax-Regular.ttf");
 }
-#gamesWrapper {
-  background-image: url(../../images/jili/full-background.jpg);
+#gamesWrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../images/jili/full-background5.jpeg);
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  filter: brightness(80%);
+  z-index: -1;
+}
+
+#gamesWrapper {
+  position: relative;
   overflow: hidden;
 }
 #gamesWrapper .container_wrapper {
@@ -114,6 +126,9 @@
 }
 #gamesWrapper .container_wrapper .gamingPart2 .spinnerWrapper .allPartWrapper .number {
   margin-top: 10px;
+}
+#gamesWrapper .container_wrapper .gamingPart2 .spinnerWrapper .allPartWrapper .part.active {
+  animation: anime_while_bar 0.4s alternate infinite;
 }
 #gamesWrapper .container_wrapper .gamingPart3 {
   position: absolute;
@@ -368,55 +383,55 @@
   font-size: 8px !important;
 }
 
-#allUserShow .modal-content .modal-body table thead,
-#winnerListShow .modal-content .modal-body table thead {
-  display: block;
-}
-#allUserShow .modal-content .modal-body table thead th,
-#winnerListShow .modal-content .modal-body table thead th {
-  border: 0px solid #dee2e6;
-}
-#allUserShow .modal-content .modal-body table tbody tr,
-#winnerListShow .modal-content .modal-body table tbody tr {
+#allUserShow .modal-content .modal-body #allUsersShowTable,
+#winnerListShow .modal-content .modal-body #allUsersShowTable {
+  background-color: transparent;
+  color: white;
   display: block;
   margin-top: 30px;
 }
-#allUserShow .modal-content .modal-body table tbody tr td,
-#winnerListShow .modal-content .modal-body table tbody tr td {
+#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list,
+#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list {
   display: flex;
   align-items: center;
   justify-content: stretch;
   gap: 20px;
+  border-top: none;
+  background: transparent;
+  border-radius: 7px;
+  box-shadow: 5px 5px 19px #0e0e0e, -5px -5px 19px dimgrey;
+  padding: 10px;
+  margin-bottom: 15px;
 }
-#allUserShow .modal-content .modal-body table tbody tr td span,
-#winnerListShow .modal-content .modal-body table tbody tr td span {
+#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list span,
+#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list span {
   display: flex;
   align-items: start;
   justify-content: center;
 }
-#allUserShow .modal-content .modal-body table tbody tr td .thumb img.img-fluid,
-#winnerListShow .modal-content .modal-body table tbody tr td .thumb img.img-fluid {
+#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list .thumb img.img-fluid,
+#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list .thumb img.img-fluid {
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
 }
-#allUserShow .modal-content .modal-body table tbody tr td .candidate-list-details .candidate-list-info,
-#winnerListShow .modal-content .modal-body table tbody tr td .candidate-list-details .candidate-list-info {
+#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list .candidate-list-details .candidate-list-info,
+#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list .candidate-list-details .candidate-list-info {
   display: flex;
   align-items: start;
   justify-content: center;
   flex-direction: column;
 }
-#allUserShow .modal-content .modal-body table tbody tr td .candidate-list-details .candidate-list-info ul.list-unstyled,
-#winnerListShow .modal-content .modal-body table tbody tr td .candidate-list-details .candidate-list-info ul.list-unstyled {
+#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list .candidate-list-details .candidate-list-info ul.list-unstyled,
+#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list .candidate-list-details .candidate-list-info ul.list-unstyled {
   margin-bottom: 0;
 }
-#allUserShow .modal-content .modal-body table tbody tr:first-child td,
-#winnerListShow .modal-content .modal-body table tbody tr:first-child td {
+#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list:first-child,
+#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list:first-child {
   border-top: 0;
 }
-#allUserShow .modal-content .modal-body table tbody tr:first-child,
-#winnerListShow .modal-content .modal-body table tbody tr:first-child {
+#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list:first-child,
+#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list:first-child {
   margin-top: 0;
 }
 
@@ -530,16 +545,6 @@ div.customModel .container h2.notice {
   background: #333232;
   box-shadow: inset 5px 5px 15px black;
 }
-.modal-dialog.modal-dialog-centered .modal-content .modal-body .table.card {
-  background-color: transparent;
-  color: white;
-}
-.modal-dialog.modal-dialog-centered .modal-content .modal-body .table.card td {
-  border-top: none;
-  background: transparent;
-  border-radius: 7px;
-  box-shadow: 5px 5px 19px #0e0e0e, -5px -5px 19px dimgrey;
-}
 
 @keyframes preloaderColorAnim {
   0% {
@@ -592,12 +597,20 @@ div.customModel .container h2.notice {
     font-size: 10px;
   }
   #gamesWrapper .container_wrapper .gamingPart2 .spinnerWrapper .indicator {
-    width: 1.2rem;
+    width: 1rem;
     left: 51%;
     top: -12px;
   }
   #gamesWrapper .container_wrapper .gamingPart3 #clockWrapper {
     width: 3rem;
+  }
+}
+@keyframes anime_while_bar {
+  0% {
+    background: black;
+  }
+  100% {
+    background: red;
   }
 }
 @keyframes roted_coins {
@@ -661,7 +674,7 @@ div.customModel .container h2.notice {
     transform: rotate(5deg);
   }
   100% {
-    transform: rotate(1194deg);
+    transform: rotate(1277deg);
   }
 }
 @keyframes whole_board1_4 {
@@ -669,7 +682,7 @@ div.customModel .container h2.notice {
     transform: rotate(5deg);
   }
   100% {
-    transform: rotate(1277deg);
+    transform: rotate(1194deg);
   }
 }
 @keyframes whole_board2_1 {
@@ -693,7 +706,7 @@ div.customModel .container h2.notice {
     transform: rotate(5deg);
   }
   100% {
-    transform: rotate(1174deg);
+    transform: rotate(1341deg);
   }
 }
 @keyframes whole_board2_4 {
@@ -709,7 +722,7 @@ div.customModel .container h2.notice {
     transform: rotate(5deg);
   }
   100% {
-    transform: rotate(1341deg);
+    transform: rotate(1174deg);
   }
 }
 @keyframes whole_board3_1 {

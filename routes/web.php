@@ -23,21 +23,51 @@ use Illuminate\Support\Facades\Hash;
 */
 
 // all games
-Route::get('/{csrf}', [GamesJiliController::class, 'index']) -> name('index');
+// Route::get('/{csrf}', [GamesJiliController::class, 'index']) -> name('index');
 Route::group(['prefix' => 'jili'], function(){
     Route::get('/test', [GamesJiliController::class, 'Test']) -> name('Test');
     Route::get('/{csrf}', [GamesJiliController::class, 'index']) -> name('index');
 });
 
 Route::get('/redis', function(){
-    // Redis::get('user_1', 10000);
     return response()->json(['amount' => json_decode(Redis::get('user_1')), 'jili_bet' => json_decode(Redis::get('jili_bet')), "jili_letest" => json_decode(Redis::get('jili_letest')), "jili_manage" => json_decode(Redis::get('jili_manage'))]);
 });
 
 
-Route::get('/welcome', function () {
-    // return view('welcome');
-   echo Hash::make("12345678");
+Route::get('/test', function () {
+
+    // $jsonData = Redis::get('jili_bet');
+    // // Decode the JSON data into an array of stdClass objects
+    // $decodedData = json_decode($jsonData);
+
+    // $filteredData = array_filter($decodedData, function ($entry) use ($userID) {
+    //     return $entry->user_id === $userID && $entry->winner === 'board2';
+    // });
+
+    // $now_bet = json_decode(Redis::get('jili_bet'));
+    // return $decodedData->where('user_id', 1)->get();
+    // return $now_bet;
+
+
+    // Retrieve the JSON data from Redis
+    $jsonData = Redis::get('jili_bet');
+
+    // Decode the JSON data into an array of objects
+    $decodedData = json_decode($jsonData);
+
+    // Group the data by user_id and winner
+    $groupedData = [];
+    foreach ($decodedData as $entry) {
+        $groupKey = $entry->user_id . '_' . $entry->winner;
+
+        if (!isset($groupedData[$groupKey])) {
+            $groupedData[$groupKey] = [];
+        }
+
+        $groupedData[$groupKey][] = $entry;
+    }
+
+    return $groupedData;
 });
 
 

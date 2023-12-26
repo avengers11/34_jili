@@ -44,13 +44,13 @@ class JobJiliBet implements ShouldQueue
         $db->st=0;
         $db->save();
 
-        // database insert
-        $oldData = JiliBoardHistory::where('board_id', $this->board_id)->first();
-        JiliBoardHistory::where('board_id', $this->board_id)->update([
-            "board1"=>$this->winner=="board1" ? $this->amount+$oldData->board1 : $oldData->board1,
-            "board2"=>$this->winner=="board2" ? $this->amount+$oldData->board2 : $oldData->board2,
-            "board3"=>$this->winner=="board3" ? $this->amount+$oldData->board3 : $oldData->board3,
-            "board4"=>$this->winner=="board4" ? $this->amount+$oldData->board4 : $oldData->board4,
-        ]);
+        // // database insert
+        // $oldData = JiliBoardHistory::where('board_id', $this->board_id)->first();
+        // JiliBoardHistory::where('board_id', $this->board_id)->update([
+        //     "board1"=>$this->winner=="board1" ? $this->amount+$oldData->board1 : $oldData->board1,
+        //     "board2"=>$this->winner=="board2" ? $this->amount+$oldData->board2 : $oldData->board2,
+        //     "board3"=>$this->winner=="board3" ? $this->amount+$oldData->board3 : $oldData->board3,
+        //     "board4"=>$this->winner=="board4" ? $this->amount+$oldData->board4 : $oldData->board4,
+        // ]);
     }
 }

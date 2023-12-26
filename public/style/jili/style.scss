@@ -5,12 +5,24 @@
     src: url('../../font/RubikBrokenFax-Regular.ttf');
 }
 
-// gamesWrapper
-#gamesWrapper {
-    background-image: url(../../images/jili/full-background.jpg);
+#gamesWrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../images/jili/full-background5.jpeg);
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    filter: brightness(80%);
+    z-index: -1;
+}
+
+// gamesWrapper
+#gamesWrapper {
+    position: relative;
     overflow: hidden;
 
     .container_wrapper {
@@ -116,7 +128,7 @@
                     z-index: 10;
                     overflow: hidden;
                     transform: rotate(5deg);
-                    // animation: whole_board1 5s alternate forwards;
+                    // animation: whole_board4_4 5s alternate forwards;
 
                     .part {
                         position: absolute;
@@ -135,6 +147,10 @@
 
                     .number {
                         margin-top: 10px;
+                    }
+
+                    .part.active {
+                        animation: anime_while_bar 0.4s alternate infinite;
                     }
                 }
             }
@@ -466,62 +482,66 @@
 #winnerListShow {
     .modal-content {
         .modal-body {
-            table {
-                thead {
-                    display: block;
+            // thead {
+            //     display: block;
 
-                    th {
-                        border: 0px solid #dee2e6;
+            //     th {
+            //         border: 0px solid #dee2e6;
+            //     }
+            // }
+
+            #allUsersShowTable {
+                background-color: transparent;
+                color: white;
+                display: block;
+                margin-top: 30px;
+
+                .candidates-list {
+                    display: flex;
+                    align-items: center;
+                    justify-content: stretch;
+                    gap: 20px;
+                    border-top: none;
+                    background: transparent;
+                    border-radius: 7px;
+                    box-shadow: 5px 5px 19px #0e0e0e, -5px -5px 19px dimgrey;
+                    padding: 10px;
+                    margin-bottom: 15px;
+
+                    span {
+                        display: flex;
+                        align-items: start;
+                        justify-content: center;
                     }
-                }
 
-                tbody {
-                    tr {
-                        display: block;
-                        margin-top: 30px;
-
-                        td {
-                            display: flex;
-                            align-items: center;
-                            justify-content: stretch;
-                            gap: 20px;
-
-                            span {
-                                display: flex;
-                                align-items: start;
-                                justify-content: center;
-                            }
-
-                            .thumb {
-                                img.img-fluid {
-                                    height: 4rem;
-                                    width: 4rem;
-                                    border-radius: 50%;
-                                }
-                            }
-
-                            .candidate-list-details {
-                                .candidate-list-info {
-                                    display: flex;
-                                    align-items: start;
-                                    justify-content: center;
-                                    flex-direction: column;
-
-                                    ul.list-unstyled {
-                                        margin-bottom: 0;
-                                    }
-                                }
-                            }
+                    .thumb {
+                        img.img-fluid {
+                            height: 4rem;
+                            width: 4rem;
+                            border-radius: 50%;
                         }
                     }
 
-                    tr:first-child td {
-                        border-top: 0;
-                    }
+                    .candidate-list-details {
+                        .candidate-list-info {
+                            display: flex;
+                            align-items: start;
+                            justify-content: center;
+                            flex-direction: column;
 
-                    tr:first-child {
-                        margin-top: 0;
+                            ul.list-unstyled {
+                                margin-bottom: 0;
+                            }
+                        }
                     }
+                }
+
+                .candidates-list:first-child {
+                    border-top: 0;
+                }
+
+                .candidates-list:first-child {
+                    margin-top: 0;
                 }
             }
         }
@@ -669,18 +689,6 @@ $background-color_1: #242833;
         .modal-body {
             background: #333232;
             box-shadow: inset 5px 5px 15px black;
-
-            .table.card {
-                background-color: transparent;
-                color: white;
-
-                td {
-                    border-top: none;
-                    background: transparent;
-                    border-radius: 7px;
-                    box-shadow: 5px 5px 19px #0e0e0e, -5px -5px 19px dimgrey;
-                }
-            }
         }
     }
 
@@ -753,7 +761,7 @@ $background-color_1: #242833;
     }
 
     #gamesWrapper .container_wrapper .gamingPart2 .spinnerWrapper .indicator {
-        width: 1.2rem;
+        width: 1rem;
         left: 51%;
         top: -12px;
     }
@@ -763,6 +771,16 @@ $background-color_1: #242833;
     }
 }
 
+// anime_while_bar
+@keyframes anime_while_bar {
+    0% {
+        background: black;
+    }
+
+    100% {
+        background: red;
+    }
+}
 
 // animation
 @keyframes roted_coins {
@@ -848,7 +866,7 @@ $background-color_1: #242833;
     }
 
     100% {
-        transform: rotate(1194deg);
+        transform: rotate(1277deg);
     }
 }
 
@@ -858,7 +876,7 @@ $background-color_1: #242833;
     }
 
     100% {
-        transform: rotate(1277deg);
+        transform: rotate(1194deg);
     }
 }
 
@@ -889,7 +907,7 @@ $background-color_1: #242833;
     }
 
     100% {
-        transform: rotate(1174deg);
+        transform: rotate(1341deg);
     }
 }
 
@@ -909,7 +927,7 @@ $background-color_1: #242833;
     }
 
     100% {
-        transform: rotate(1341deg);
+        transform: rotate(1174deg);
     }
 }
 

@@ -171,26 +171,24 @@ socket.on('UpdateUserData', (data) => {
     const sortedData = data.sort((a, b) => b.amount - a.amount);
     const mapData = sortedData.map((curE) => {
         return `
-            <tr class="candidates-list">
-                <td class="title">
-                    <div class="thumb">
-                        <img class="img-fluid" src="${curE.img}" alt="" />
-                    </div>
-                    <div class="candidate-list-details">
-                        <div class="candidate-list-info">
-                            <div class="candidate-list-title">
-                                <h5 class="mb-0"><a>${curE.name}</a></h5>
-                            </div>
-                            <div class="candidate-list-option">
-                                <ul class="list-unstyled">
-                                    <li><i class="fa-solid fa-heart mr-2"></i>${curE.flower} Flowing</li>
-                                    <li><i class="fa-solid fa-coins mr-2"></i>${curE.amount} Coin</li>
-                                </ul>
-                            </div>
+            <div class="candidates-list">
+                <div class="thumb">
+                    <img class="img-fluid" src="${curE.img}" alt="" />
+                </div>
+                <div class="candidate-list-details">
+                    <div class="candidate-list-info">
+                        <div class="candidate-list-title">
+                            <h5 class="mb-0"><a>${curE.name}</a></h5>
+                        </div>
+                        <div class="candidate-list-option">
+                            <ul class="list-unstyled">
+                                <li><i class="fa-solid fa-heart mr-2"></i>${curE.flower} Flowing</li>
+                                <li><i class="fa-solid fa-coins mr-2"></i>${curE.amount} Coin</li>
+                            </ul>
                         </div>
                     </div>
-                </td>
-            </tr>
+                </div>
+            </div>
             `
     })
     $("#allUsersShowTable").html(mapData);

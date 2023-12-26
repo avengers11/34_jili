@@ -204,7 +204,7 @@
 <input type="hidden" id="id" value="{{ $csrf }}">
 
 {{-- preloader  --}}
-<div class="LoaddingWrapper d-none">
+<div class="LoaddingWrapper">
     <img src="{{ asset('images/logo/preloader.png') }}" alt="" />
     <div class="progress">
         <div class="progress-bar"></div>
@@ -386,10 +386,9 @@
             </div>
             <div class="modal-body">
 
-                <table class="table manage-candidates-top card">
-                    <tbody id="allUsersShowTable">
-                    </tbody>
-                </table>
+                <div class="table manage-candidates-top card" id="allUsersShowTable">
+                </div>
+
             </div>
         </div>
     </div>
