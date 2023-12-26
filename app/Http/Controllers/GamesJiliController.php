@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 // use App\Events\EventJiliGameBetInsert;
 // use App\Events\EventJiliGamesUsers;
+
+use App\Events\EventJiliGameStart;
 use App\Jobs\JobJiliBet;
 use App\Models\JiliBoardHistory;
 use App\Models\JiliManagements;
@@ -16,11 +18,13 @@ class GamesJiliController extends Controller
 {
     // Test
     public function Test() {
-        return auth()->user()->email;
+        // return auth()->user()->email;
     }
 
     //index
     public function index($csrf) {
+        event(new EventJiliGameStart("board1", "1234567890"));
+
         $vudoolive = JiliUsers::find($csrf);
         $oldUsers = JiliUsers::find($csrf);
         $user=User::find(1);
