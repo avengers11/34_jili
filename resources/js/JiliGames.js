@@ -198,3 +198,8 @@ Echo.channel('JiliGameWinnerChannel')
         }
 
     });
+
+
+// $(document).click(function () {
+//     console.log('test-' + import.meta.env.VITE_ENV);
+// });
