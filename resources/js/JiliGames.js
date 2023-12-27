@@ -201,5 +201,9 @@ Echo.channel('JiliGameWinnerChannel')
 
 
 // $(document).click(function () {
-//     console.log('test-' + import.meta.env.VITE_ENV);
+//     if (import.meta.env.VITE_ENV === 'local') {
+//         console.log('test-local');
+//     } else {
+//         console.log('test-p');
+//     }
 // });
