@@ -126,6 +126,8 @@ Echo.channel('JiliGamesStartChannel')
 // Winner Show
 Echo.channel('JiliGameWinnerChannel')
     .listen('.JiliGameWinnerEvent', (e) => {
+        console.log(e);
+
         let winner = e.winner;
         let btn = "";
         let win = "";
@@ -148,11 +150,7 @@ Echo.channel('JiliGameWinnerChannel')
 
         const data = e.array;
         if (!data || data.length === 0) {
-            const mapDataE = `<tr class="candidates-list">
-                        <td class="title">
-                            No one is win!
-                        </td >
-                    </tr >`;
+            const mapDataE = `<div class="candidates-list">No one is win!</div>`;
             console.log(mapDataE);
             $("#letestWinnerShow").html(mapDataE);
 
@@ -170,28 +168,26 @@ Echo.channel('JiliGameWinnerChannel')
                 }
 
                 return `
-                    <tr class="candidates-list">
-                        <td class="title">
-                            <span>
-                                <div class="thumb">
-                                    <img class="img-fluid" src="${urls.url}/images/jili/users/${curE.img}" alt="" />
-                                </div>
-                                <div class="candidate-list-details">
-                                    <div class="candidate-list-info">
-                                        <div class="candidate-list-title">
-                                            <h5 class="mb-0"><a>${curE.name}</a></h5>
-                                        </div>
-                                        <div class="candidate-list-option">
-                                            <ul class="list-unstyled">
-                                                <li>${curE.tranction_amount}</li>
-                                            </ul>
-                                        </div>
+                    <div class="candidates-list">
+                        <span>
+                            <div class="thumb mr-3">
+                                <img class="img-fluid" src="${urls.url}/images/jili/users/${curE.img}" alt="" />
+                            </div>
+                            <div class="candidate-list-details">
+                                <div class="candidate-list-info">
+                                    <div class="candidate-list-title">
+                                        <h5 class="mb-0"><a>${curE.name}</a></h5>
+                                    </div>
+                                    <div class="candidate-list-option">
+                                        <ul class="list-unstyled">
+                                            <li>${curE.tranction_amount}</li>
+                                        </ul>
                                     </div>
                                 </div>
-                            </span>
-                            ${badge}
-                        </td >
-                    </tr >
+                            </div>
+                        </span>
+                        ${badge}
+                    </div>
                 `;
             });
             $("#letestWinnerShow").html(mapData);

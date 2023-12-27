@@ -495,54 +495,6 @@
                 color: white;
                 display: block;
                 margin-top: 30px;
-
-                .candidates-list {
-                    display: flex;
-                    align-items: center;
-                    justify-content: stretch;
-                    gap: 20px;
-                    border-top: none;
-                    background: transparent;
-                    border-radius: 7px;
-                    box-shadow: 5px 5px 19px #0e0e0e, -5px -5px 19px dimgrey;
-                    padding: 10px;
-                    margin-bottom: 15px;
-
-                    span {
-                        display: flex;
-                        align-items: start;
-                        justify-content: center;
-                    }
-
-                    .thumb {
-                        img.img-fluid {
-                            height: 4rem;
-                            width: 4rem;
-                            border-radius: 50%;
-                        }
-                    }
-
-                    .candidate-list-details {
-                        .candidate-list-info {
-                            display: flex;
-                            align-items: start;
-                            justify-content: center;
-                            flex-direction: column;
-
-                            ul.list-unstyled {
-                                margin-bottom: 0;
-                            }
-                        }
-                    }
-                }
-
-                .candidates-list:first-child {
-                    border-top: 0;
-                }
-
-                .candidates-list:first-child {
-                    margin-top: 0;
-                }
             }
         }
     }
@@ -689,6 +641,61 @@ $background-color_1: #242833;
         .modal-body {
             background: #333232;
             box-shadow: inset 5px 5px 15px black;
+
+            .card {
+                background: transparent;
+                color: white;
+                display: block;
+            }
+
+            .candidates-list {
+                display: flex;
+                align-items: center;
+                justify-content: stretch;
+                gap: 20px;
+                border-top: none;
+                background: transparent;
+                border-radius: 7px;
+                box-shadow: 5px 5px 19px #0e0e0e, -5px -5px 19px dimgrey;
+                padding: 10px;
+                margin-bottom: 15px;
+
+                span {
+                    display: flex;
+                    align-items: start;
+                    justify-content: center;
+                }
+
+                .thumb {
+                    img.img-fluid {
+                        height: 4rem;
+                        width: 4rem;
+                        border-radius: 50%;
+                    }
+                }
+
+                .candidate-list-details {
+                    .candidate-list-info {
+                        display: flex;
+                        align-items: start;
+                        justify-content: center;
+                        flex-direction: column;
+
+                        ul.list-unstyled {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .candidates-list:first-child {
+                border-top: 0;
+            }
+
+            .candidates-list:first-child {
+                margin-top: 0;
+            }
+
         }
     }
 

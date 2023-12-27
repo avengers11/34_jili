@@ -36,7 +36,7 @@ class JobJiliResult implements ShouldQueue
      */
     public function handle(): void
     {
-        $winner=DB::table('jili_bet_inserts')
+        $winnerarray=DB::table('jili_bet_inserts')
                 ->join("jili_users",  "jili_bet_inserts.user_id", "=", "jili_users.user_id")
                 ->select(
                     "jili_users.name as name",
@@ -53,6 +53,6 @@ class JobJiliResult implements ShouldQueue
         // Change st
         JiliBetInsert::where('board_id', $this->time)->update(["st" => 1]);
 
-        event(new EventJiliGameWinner($winner, $this->winner));
+        event(new EventJiliGameWinner($winnerarray, $this->winner));
     }
 }

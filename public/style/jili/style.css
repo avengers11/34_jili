@@ -390,50 +390,6 @@
   display: block;
   margin-top: 30px;
 }
-#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list,
-#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list {
-  display: flex;
-  align-items: center;
-  justify-content: stretch;
-  gap: 20px;
-  border-top: none;
-  background: transparent;
-  border-radius: 7px;
-  box-shadow: 5px 5px 19px #0e0e0e, -5px -5px 19px dimgrey;
-  padding: 10px;
-  margin-bottom: 15px;
-}
-#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list span,
-#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list span {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-}
-#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list .thumb img.img-fluid,
-#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list .thumb img.img-fluid {
-  height: 4rem;
-  width: 4rem;
-  border-radius: 50%;
-}
-#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list .candidate-list-details .candidate-list-info,
-#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list .candidate-list-details .candidate-list-info {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  flex-direction: column;
-}
-#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list .candidate-list-details .candidate-list-info ul.list-unstyled,
-#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list .candidate-list-details .candidate-list-info ul.list-unstyled {
-  margin-bottom: 0;
-}
-#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list:first-child,
-#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list:first-child {
-  border-top: 0;
-}
-#allUserShow .modal-content .modal-body #allUsersShowTable .candidates-list:first-child,
-#winnerListShow .modal-content .modal-body #allUsersShowTable .candidates-list:first-child {
-  margin-top: 0;
-}
 
 #WnningResultShow .modal-dialog .modal-content .modal-body .WinnerResult {
   display: flex;
@@ -544,6 +500,48 @@ div.customModel .container h2.notice {
 .modal-dialog.modal-dialog-centered .modal-content .modal-body {
   background: #333232;
   box-shadow: inset 5px 5px 15px black;
+}
+.modal-dialog.modal-dialog-centered .modal-content .modal-body .card {
+  background: transparent;
+  color: white;
+  display: block;
+}
+.modal-dialog.modal-dialog-centered .modal-content .modal-body .candidates-list {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 20px;
+  border-top: none;
+  background: transparent;
+  border-radius: 7px;
+  box-shadow: 5px 5px 19px #0e0e0e, -5px -5px 19px dimgrey;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.modal-dialog.modal-dialog-centered .modal-content .modal-body .candidates-list span {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+.modal-dialog.modal-dialog-centered .modal-content .modal-body .candidates-list .thumb img.img-fluid {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+.modal-dialog.modal-dialog-centered .modal-content .modal-body .candidates-list .candidate-list-details .candidate-list-info {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+.modal-dialog.modal-dialog-centered .modal-content .modal-body .candidates-list .candidate-list-details .candidate-list-info ul.list-unstyled {
+  margin-bottom: 0;
+}
+.modal-dialog.modal-dialog-centered .modal-content .modal-body .candidates-list:first-child {
+  border-top: 0;
+}
+.modal-dialog.modal-dialog-centered .modal-content .modal-body .candidates-list:first-child {
+  margin-top: 0;
 }
 
 @keyframes preloaderColorAnim {
