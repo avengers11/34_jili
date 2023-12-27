@@ -13,9 +13,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('style\jili\style.css') }}">
 
-    <script src="{{ asset('build\assets\app-ba7b4ebc.js') }}"></script>
+    @if (env('MR_ENV') == "local")
+        @vite(['resources\js\JiliGames.js'])
+    @else
+        <script src="{{ asset('build\assets\app-db2cfa5d.js') }}"></script>
+    @endif
 
-    {{-- @vite(['resources\js\JiliGames.js']) --}}
 
 </head>
 <body>
