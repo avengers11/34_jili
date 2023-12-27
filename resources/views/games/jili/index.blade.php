@@ -16,7 +16,7 @@
     @if (env('MR_ENV') == "local")
         @vite(['resources\js\JiliGames.js'])
     @else
-        <script src="{{ asset('build\assets\app-87057329.js') }}"></script>
+        <script src="{{ asset('build\assets\app-fcfdcbcb.js') }}"></script>
     @endif
 
 </head>
